@@ -10,7 +10,7 @@
 		</div>
 		<div class="sub-menu text-center row">
 			<div>
-				<a @click="showIframe()" href="https://baidu.com" target="showHere">
+				<a href="javascript:;" target="showHere"><!-- @click="showIframe()" //iframe事件 -->
 					<div class="icon-wrap">
 						<img src="../assets/icons/chat.svg" alt="">
 					</div>
@@ -18,7 +18,7 @@
 				</a>
 			</div>
 			<div>
-				<a @click="showIframe()" href="http://www.a-su.com.cn/" target="showHere">
+				<a href="javascript:;" target="showHere">
 					<div class="icon-wrap">
 					<img src="../assets/icons/payment.svg" alt="">
 					</div>

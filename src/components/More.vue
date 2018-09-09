@@ -1,11 +1,11 @@
 <template>
-	<div class="container">
+	<div class="container text-center">
 		<header class="row">
-			<div class="text-center">
+			<div>
 				More
 			</div>
 		</header>
-		
+		<h4>To be expected</h4>
 		<footer-menu></footer-menu>
 	</div>
 </template>
@@ -29,5 +29,9 @@ export default {
 header{
 	padding: 15px 0;
 	background-color: #f4f4f4;
+}
+h4{
+	margin-top: 25%;
+	color: gray;
 }
 </style>

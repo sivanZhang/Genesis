@@ -1,11 +1,11 @@
 <template>
-	<div class="container">
+	<div class="container text-center">
 		<header class="row">
 			<div class="text-center">
 				Servises
 			</div>
 		</header>
-		
+			<h4>To be expected</h4>
 		<footer-menu></footer-menu>
 	</div>
 </template>
@@ -32,5 +32,9 @@ header{
 }
 .logo{
 	height: 40px;
+}
+h4{
+	margin-top: 25%;
+	color: gray;
 }
 </style>
