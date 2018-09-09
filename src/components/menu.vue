@@ -1,14 +1,10 @@
 <template>
-  <ul class="row">
-    <li v-for="(item,index) in nav"
-    :key="index"
-    :class="navindex === index ? 'active' : ''"
-    @click="routerLink(item.path)"
-    >
-  <img class="icon" :src="navindex == index ? item.src_act : item.src" alt="icon">
-    <div>{{item.name}}</div>
-    </li>
-  </ul>
+  <div class="row">
+    <router-link v-for="(item,index) in nav" :key="index" :to="item.path" tag="a">
+      <img class="icon" :src="$route.path==item.path ? item.src_act : item.src" alt="icon">
+      <div>{{item.name}}</div>
+    </router-link>
+  </div>
 </template>
 
 <script>
@@ -48,18 +44,12 @@ export default {
         }
       ]
     };
-  },
-  methods: {
-    routerLink(path) {
-      this.$router.push(path);
-    }
-  },
-  props: ["navindex"]
-};
+  }
+}
 </script>
 
-<style scoped>
-ul {
+<style scoped lang='less'>
+.row{
   position: fixed;
   display: flex;
   bottom: 0;
@@ -68,8 +58,24 @@ ul {
   justify-content: space-between;
   background-color: #f4f4f4;
   color: #a0a0a0;
+  a{
+    display: flex;
+    flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  img.icon {
+  width: 28px;
+  height: 28px;
 }
-ul::after {
+  }
+  a:nth-child(3){
+  transform: translateY(-10px)
+}
+  
+}
+div.row::after {
   content: "";
   background-color: #f4f4f4;
   width: 50px;
@@ -81,18 +87,7 @@ ul::after {
   transform: translateX(-50%);
   z-index: -1;
 } 
-ul > li {
-  width: 20%;
-  text-align: center;
-}
-img.icon {
-  width: 30px;
-  height: 30px;
-}
-li:nth-child(3){
-  transform: translateY(-10px)
-}
-.active {
+.router-link-exact-active{
   color: #333;
 }
 </style>

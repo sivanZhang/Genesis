@@ -2,11 +2,11 @@
 	<div class="container">
 		<header class="row">
 			<div class="text-center">
-				<img class="logo" src="../assets/logo.png" alt="">
+				Servises
 			</div>
 		</header>
 		
-		<footer-menu :navindex='3'></footer-menu>
+		<footer-menu></footer-menu>
 	</div>
 </template>
 

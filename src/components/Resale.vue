@@ -1,12 +1,10 @@
 <template>
 	<div class="container">
 		<header class="row">
-			<div class="text-center">
-				<img class="logo" src="../assets/logo.png" alt="">
-			</div>
+			Resale
 		</header>
 		
-		<footer-menu :navindex='1'></footer-menu>
+		<footer-menu></footer-menu>
 	</div>
 </template>
 
@@ -29,8 +27,6 @@ export default {
 header{
 	padding: 15px 0;
 	background-color: #f4f4f4;
-}
-.logo{
-	height: 40px;
+	text-align: center;
 }
 </style>
