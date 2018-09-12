@@ -12,7 +12,7 @@
 			<div>
 				<a href="javascript:;" target="showHere"><!-- @click="showIframe()" //iframe事件 -->
 					<div class="icon-wrap">
-						<img src="../assets/icons/chat.svg" alt="">
+						<img src="../assets/icons/2.png" alt="">
 					</div>
 					<div>Notification</div>
 				</a>
@@ -20,7 +20,7 @@
 			<div>
 				<a href="javascript:;" target="showHere">
 					<div class="icon-wrap">
-					<img src="../assets/icons/payment.svg" alt="">
+					<img src="../assets/icons/3.png" alt="">
 					</div>
 					<div>Levy Payment</div>
 				</a>
@@ -28,7 +28,7 @@
 			<div>
 				<a href="javascript:;">
 					<div class="icon-wrap">
-					<img src="../assets/icons/repair.svg" alt="">
+					<img src="../assets/icons/4.png" alt="">
 					</div>
 					<div>Rrepair Request</div>
 				</a>
@@ -36,7 +36,7 @@
 			<div>
 				<a href="javascript:;">
 					<div class="icon-wrap">
-					<img src="../assets/icons/stop.svg" alt="">
+					<img src="../assets/icons/5.png" alt="">
 					</div>
 					<div>Visitor Parking</div>
 				</a>
@@ -106,9 +106,6 @@ iframe{
 	font-size: 12px;
 }
 .sub-menu .icon-wrap{
-	border-radius: 50%;
-	border: 2px solid #a0a0a0;
-	padding: 12px;
 	margin: 0 auto 8px;
 	width: 60px;
 }
@@ -116,7 +113,7 @@ iframe{
 	width: 100%;
 }
 header{
-	padding: 15px 0;
+	padding: 10px 0;
 	background-color: #f4f4f4;
 }
 .main{
