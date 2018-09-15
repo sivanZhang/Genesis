@@ -54,10 +54,11 @@ export default {
   display: flex;
   bottom: 0;
   width: 100%;
-  padding: 8px 0;
+  padding: 6px 0 0;
   justify-content: space-between;
   background-color: #f4f4f4;
   color: #a0a0a0;
+  }
   a{
     display: flex;
     flex-direction: column;
@@ -66,27 +67,31 @@ export default {
   justify-content: center;
   font-size: 12px;
   img.icon {
-  width: 28px;
-  height: 28px;
+  width: 26%;
+}
+div{
+  line-height: 1.2
 }
   }
   a:nth-child(3){
-  transform: translateY(-10px)
+  transform: translateY(-16%);
+  img.icon {
+  width: 39%;
 }
-  
-}
-div.row::after {
+  &::after {
   content: "";
   background-color: #f4f4f4;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height:60px;
   border-radius: 50%;
   position: absolute;
   top: -15px;
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;
-} 
+}   
+}
+
 .router-link-exact-active{
   color: #333;
 }

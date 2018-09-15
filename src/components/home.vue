@@ -10,7 +10,7 @@
 		</div>
 		<div class="sub-menu text-center row">
 			<div>
-				<a href="javascript:;" target="showHere"><!-- @click="showIframe()" //iframe事件 -->
+				<a href="https://www.baidu.com/" @click="showIframe()" target="showHere"><!-- @click="showIframe()" //iframe事件 -->
 					<div class="icon-wrap">
 						<img src="../assets/icons/2.png" alt="">
 					</div>
@@ -43,93 +43,98 @@
 			</div>
 		</div>
 		<footer-menu></footer-menu>
-		<div v-show="iframeState" id="show-iframe" class="row iframe-wrap">
-			<div class="iframe-header"><img @click="closeIframe()" src="../assets/icons/close.svg" alt=""></div>
-			<iframe frameborder=0 name="showHere" scrolling=auto src="">
+		<div v-show="iframeState" id="show_iframe" class="row iframe-wrap">
+			<div class="iframe-header text-center"><img @click="closeIframe()" src="../assets/icons/close.svg" alt="">{{title}}</div>
+			<iframe id="tag_iframe" frameborder=0 name="showHere" scrolling=auto src="">
 		</iframe>
 		</div>
 	</div>
 </template>
 
 <script>
-import footerMenu from './menu';
+import footerMenu from "./menu";
 export default {
-	components: {
+  components: {
     footerMenu
   },
-  data () {
+  data() {
     return {
-      iframeState:false,
-	}
+      iframeState: false,
+      title: "Genesis"
+    };
   },
-  methods:{
-	  closeIframe(){
+  methods: {
+    closeIframe() {
       this.iframeState = false;
     },
-	  showIframe(){
-      this.iframeState = true;
-    }
+    showIframe() {
+	  this.iframeState = true;
+	}
   },
-  mounted(){
-    const oIframe = document.getElementById('show-iframe');
+  mounted() {
     const deviceHeight = document.documentElement.clientHeight;
-    oIframe.style.height = deviceHeight + 'px'; 
+    show_iframe.style.height = deviceHeight + "px";
+    let width = $(".main").width();
+    $(".main").css("height", width * 0.56 + "px");
   }
 }
 </script>
 
 <style scoped>
-.iframe-wrap{
-	position: fixed;
-	top: 0;
-	z-index: 100;
-	width: 100%;
+.iframe-wrap {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
 }
-.iframe-header{
-	height: 40px;
-	background-color: #f4f4f4;
+.iframe-header {
+  height: 40px;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ddd;
+  line-height: 40px;
 }
-.iframe-header img{
-	width: 20px;
-	margin: 10px 15px;
+.iframe-header img {
+  width: 20px;
+  margin: 10px 15px;
+  position: absolute;
+  left: 0;
 }
-iframe{
-	width: 100%;
-	height: 100%;
+iframe {
+  width: 100%;
+  height: 100%;
 }
-.sub-menu>div{
-	width: 25%;
+.sub-menu > div {
+  width: 25%;
 }
-.sub-menu{
-	display: flex;
-	justify-content: space-around;
-	font-size: 12px;
+.sub-menu {
+  display: flex;
+  justify-content: space-around;
+  font-size: 12px;
+	white-space:nowrap;
+	letter-spacing:0;
 }
-.sub-menu .icon-wrap{
-	margin: 0 auto 8px;
-	width: 60px;
+.sub-menu .icon-wrap {
+  margin: 0 auto 8px;
+  width: 56%;
 }
-.sub-menu img{
-	width: 100%;
+.sub-menu img {
+  width: 100%;
 }
-header{
-	padding: 10px 0;
-	background-color: #f4f4f4;
+header {
+  padding: 10px 0;
+  background-color: #f4f4f4;
 }
-.main{
-	height: 240px;
+.main img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
-.main img{
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
+.logo {
+  width: 33.9%;
 }
-.logo{
-	height: 30px;
-}
-.sub-menu{
-	padding: 20px 0;
-	background-color: #f4f4f4;
-	color: #a0a0a0;
+.sub-menu {
+  padding: 20px 0;
+  background-color: #f4f4f4;
+  color: #a0a0a0;
 }
 </style>
