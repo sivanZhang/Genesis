@@ -18,7 +18,7 @@
 				</a>
 			</div>
 			<div>
-				<a href="javascript:;" target="showHere">
+				<a href="http://www.qq.com/">
 					<div class="icon-wrap">
 					<img src="../assets/icons/3.png" alt="">
 					</div>
@@ -26,7 +26,7 @@
 				</a>
 			</div>
 			<div>
-				<a href="javascript:;">
+				<a href="https://www.sina.com.cn/" target="_blank">
 					<div class="icon-wrap">
 					<img src="../assets/icons/4.png" alt="">
 					</div>
@@ -34,7 +34,7 @@
 				</a>
 			</div>
 			<div>
-				<a href="javascript:;">
+				<a href="javascript:;" @click="toTest">
 					<div class="icon-wrap">
 					<img src="../assets/icons/5.png" alt="">
 					</div>
@@ -68,16 +68,23 @@ export default {
       this.iframeState = false;
     },
     showIframe() {
-	  this.iframeState = true;
-	}
+      this.iframeState = true;
+		},
+		toTest(){
+			cordova.InAppBrowser.open('http://www.w3school.com.cn', '_blank');
+		}
   },
   mounted() {
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+      window.open = cordova.InAppBrowser.open;
+    }
     const deviceHeight = document.documentElement.clientHeight;
     show_iframe.style.height = deviceHeight + "px";
     let width = $(".main").width();
     $(".main").css("height", width * 0.56 + "px");
   }
-}
+};
 </script>
 
 <style scoped>
@@ -110,8 +117,8 @@ iframe {
   display: flex;
   justify-content: space-around;
   font-size: 12px;
-	white-space:nowrap;
-	letter-spacing:0;
+  white-space: nowrap;
+  letter-spacing: 0;
 }
 .sub-menu .icon-wrap {
   margin: 0 auto 8px;

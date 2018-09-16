@@ -6,6 +6,11 @@
 			</div>
 		</header>
 		<h4>To be expected</h4>
+		<img src="../assets/lighthouse.jpg" alt="">
+		<img src="../assets/lighthouse.jpg" alt="">
+		<img src="../assets/lighthouse.jpg" alt="">
+		<img src="../assets/lighthouse.jpg" alt="">
+		<img src="../assets/lighthouse.jpg" alt="">
 		<footer-menu></footer-menu>
 	</div>
 </template>
@@ -33,5 +38,8 @@ header{
 h4{
 	margin-top: 25%;
 	color: gray;
+}
+img{
+	max-width: 100%;
 }
 </style>
