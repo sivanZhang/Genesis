@@ -19,9 +19,13 @@ export default {
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
 	}
-  }
+	},
+	berorCreated(){
+		location.href="http://www.w3school.com.cn"/* 
+		window.open("http://www.w3school.com.cn","_top") */
+		/* cordova.InAppBrowser.open('http://www.w3school.com.cn', '_blank'); */
+	}
 }
 </script>
 
