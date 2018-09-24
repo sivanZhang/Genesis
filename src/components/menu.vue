@@ -79,37 +79,44 @@ export default {
   justify-content: space-between;
   background-color: #f4f4f4;
   color: #a0a0a0;
+/*   &::before {
+    content: "";
+    background-color: #f4f4f4;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  } */
 }
 a {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  align-items: center;
-  justify-content: flex-end;
+  flex: 1 1 auto;
+  align-items:center;
+  justify-content:flex-end;
   font-size: 12px;
+  padding: 4px 0 2px;
   img.icon {
-    width: 20px;
+    width: 22px;
+    margin-bottom: 4px;
   }
   div {
     line-height: 1.2;
   }
 }
 a:nth-child(2) {
-  transform: translateY(-16%);
   img.icon {
-    width: 30px;
-  }
-  &::after {
-    content: "";
-    background-color: #f4f4f4;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
     position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;
+    width: 40px;
+    height: 40px;
+    transform: translateY(-30%);
+    background-color: #f4f4f4;
+    padding: 6px;
+    border-radius: 50%;
   }
 }
 
