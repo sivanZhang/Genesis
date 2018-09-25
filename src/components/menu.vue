@@ -79,18 +79,7 @@ export default {
   justify-content: space-between;
   background-color: #f4f4f4;
   color: #a0a0a0;
-/*   &::before {
-    content: "";
-    background-color: #f4f4f4;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;
-  } */
+z-index: 100;
 }
 a {
   display: flex;

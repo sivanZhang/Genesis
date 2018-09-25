@@ -10,7 +10,7 @@
 		</div>
 		<div class="sub-menu text-center row">
 			<div>
-				<a @click.prevent="getAppBrowser('http://www.demo-it.com.au/genesisstrata/category/notice/')"><!-- @click="showIframe()" target="showHere" //iframe事件 -->
+				<a href="http://www.demo-it.com.au/genesisstrata/category/notice/" @click="showIframe()" target="showHere"><!--  @click.prevent="getAppBrowser('http://www.demo-it.com.au/genesisstrata/category/notice/')" -->
 					<div class="icon-wrap">
 						<img src="../assets/icons/2.png" alt="">
 					</div>
@@ -18,7 +18,7 @@
 				</a>
 			</div>
 			<div>
-				<a @click.prevent="getAppBrowser('http://www.demo-it.com.au/genesisstrata/paylevy/')">
+				<a href="http://www.demo-it.com.au/genesisstrata/paylevy/" @click="showIframe()" target="showHere"><!-- @click.prevent="getAppBrowser('http://www.demo-it.com.au/genesisstrata/paylevy/')" -->
 					<div class="icon-wrap">
 					<img src="../assets/icons/3.png" alt="">
 					</div>
@@ -26,7 +26,8 @@
 				</a>
 			</div>
 			<div>
-				<a @click.prevent="getAppBrowser('http://www.demo-it.com.au/genesisstrata/repair-request/')">
+				<!-- <a @click.prevent="getAppBrowser('http://www.demo-it.com.au/genesisstrata/repair-request/')"> -->
+        <a href="http://www.demo-it.com.au/genesisstrata/repair-request/" @click="showIframe()" target="showHere">
 					<div class="icon-wrap">
 					<img src="../assets/icons/4.png" alt="">
 					</div>
@@ -34,7 +35,8 @@
 				</a>
 			</div>
 			<div>
-				<a @click.prevent="getAppBrowser('http://www.demo-it.com.au/genesisstrata/visitor-parking/')">
+				<!-- <a @click.prevent="getAppBrowser('http://www.demo-it.com.au/genesisstrata/visitor-parking/')"> -->
+        <a href="http://www.demo-it.com.au/genesisstrata/visitor-parking/" @click="showIframe()" target="showHere">
 					<div class="icon-wrap">
 					<img src="../assets/icons/5.png" alt="">
 					</div>
@@ -79,7 +81,6 @@ export default {
       this.iframeState = true;
     },
     getAppBrowser(url) {
-      debugger
       var options = 'location=no';
       if (typeof a != "undefined") {
         cordova.InAppBrowser.open(url, "_blank",options);
@@ -89,10 +90,6 @@ export default {
     }
   },
   mounted() {
-    /* document.addEventListener("deviceready", onDeviceReady, false);
-    function onDeviceReady() {
-      window.open = cordova.InAppBrowser.open;
-    } */
     const deviceHeight = document.documentElement.clientHeight;
     show_iframe.style.height = deviceHeight + "px";
     let width = $(".main").width();
@@ -118,8 +115,9 @@ h4 {
 .iframe-wrap {
   position: fixed;
   top: 0;
-  z-index: 100;
+  z-index:98;
   width: 100%;
+  padding-bottom:50px; 
 }
 .iframe-header {
   height: 40px;
