@@ -5,48 +5,37 @@
 				<img class="logo" src="../assets/logo.png" alt="">
 			</div>
 		</header>
-<div class="iframe-warp row">
-	<iframe id="show-iframe" frameborder=0 scrolling='auto' src="http://www.demo-it.com.au/genesisstrata/admin"></iframe>
-</div>
-
-<loading v-if="loading"></loading> 
-			
+    <loading v-if="loading"></loading> 	
 	</div>
 </template>
 
 <script>
-/* import footerMenu from './menu'; */
 export default {
-  name: "profile" /* 
-	components: {
-    footerMenu
-  }, */,
+  name: "profile",
   data() {
     return {
-
-	  loading: true
+      loading: true
     };
   },
-  mounted() {
-    const oIframe = document.getElementById("show-iframe");
-    const deviceWidth = document.documentElement.clientWidth;
-    const deviceHeight = document.documentElement.clientHeight;
-    oIframe.style.width = deviceWidth + "px";
-    oIframe.style.height = deviceHeight + "px";
-    oIframe.onload = () => {
-	  this.loading = false;
-    };
+  methods: {
+    getHtml(url) {
+      var options = "location=no";
+      if (typeof a != "undefined") {
+        cordova.InAppBrowser.open(url, "_blank", options);
+        this.loading = false;
+      } else {
+        window.open(url, "_top");
+        this.loading = false;
+      }
+    }
+  },
+  created() {
+    this.getHtml(`http://www.demo-it.com.au/genesisstrata/admin`);
   }
 };
 </script>
 
 <style scoped>
-.iframe-wrap {
-  -webkit-overflow-scrolling: touch;
-  overflow-y: scroll;
-  z-index: 99;
-  padding-bottom: 46px;
-}
 header {
   padding: 10px 0;
   background-color: #fefefe;
