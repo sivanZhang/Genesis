@@ -1,10 +1,10 @@
 <template>
 	<div class="container text-center">
-	<!-- 	<header class="row">
+	  <header class="row">
 			<div class="text-center">
 				<img class="logo" src="../assets/logo.png" alt="">
 			</div>
-		</header> -->
+		</header>
     <div class="iframe-warp row">
       <iframe id="show-iframe" frameborder="0" scrolling="auto" :src="$store.state.url" allowfullscreen></iframe>
     </div>
@@ -21,15 +21,13 @@ export default {
     };
   },
   mounted() {
-    const oIframe = document.getElementById("show-iframe");
-    const deviceWidth = document.documentElement.clientWidth;
-    const deviceHeight = document.documentElement.clientHeight;
+    const oIframe = document.getElementById("show-iframe")
+    ,deviceWidth = document.documentElement.clientWidth
+    ,deviceHeight = document.documentElement.clientHeight;
     oIframe.style.width = deviceWidth + "px";
     oIframe.style.height = deviceHeight + "px";
     oIframe.onload = () => {
       this.loading = false;
-      console.log(oIframe);
-      console.log(oIframe.contentWindow.document.getElementById('index-form'))
     };
   }
 };
