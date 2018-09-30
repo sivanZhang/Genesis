@@ -1,13 +1,13 @@
 <template>
 	<div class="container text-center">
 		<header class="row">
-			<div>
-				More
+			<div class="text-center">
+				<img class="logo" src="../assets/logo.png" alt="">
 			</div>
 		</header>
 			<div class="sub-menu text-center row">
 			<div>
-				<a @click.prevent="getAppBrowser('http://www.demo-it.com.au/genesisstrata/paylevy/')">
+				<a @click.prevent="getHtml(`http://www.demo-it.com.au/genesisstrata/paylevy/`)">
 					<div class="icon-wrap">
 					<img src="../assets/icons/3.png" alt="">
 					</div>
@@ -15,57 +15,58 @@
 				</a>
 			</div>
 			<div>
-				<a @click.prevent="getAppBrowser('http://www.demo-it.com.au/genesisstrata/repair-request/')">
+				<a @click.prevent="getHtml(`http://www.demo-it.com.au/genesisstrata/repair-request/`)">
 					<div class="icon-wrap">
 					<img src="../assets/icons/4.png" alt="">
 					</div>
-					<div>Rrepair Request</div>
+					<div>Repair Request</div>
 				</a>
 			</div>
 			<div>
-				<a @click.prevent="getAppBrowser('http://www.demo-it.com.au/genesisstrata/visitor-parking/')">
+				<a @click.prevent="getHtml(`http://www.demo-it.com.au/genesisstrata/visitor-parking/`)">
 					<div class="icon-wrap">
 					<img src="../assets/icons/5.png" alt="">
 					</div>
 					<div>Visitor Parking</div>
 				</a>
 			</div>
-		</div><!--  -->
-		<footer-menu></footer-menu>
+		</div>
 	</div>
 </template>
 
 <script>
-import footerMenu from './menu';
 export default {
 	name:'more',
-	components: {
-    footerMenu
-  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
 	}
   },
 	methods:{
-		getAppBrowser(url) {
+		/* getHtml(url) {
 			var options = 'location=no';
       if (typeof a != "undefined") {
         cordova.InAppBrowser.open(url, "_blank",options);
       } else {
         window.open(url, "_top");
       }
+		} */
+		getHtml(val) {
+      this.$store.commit("setUrl",val);
+			this.$router.push('/iframe');
+			console.log(val)
     }
 	}
 }
 </script>
 
 <style scoped>
-header{
-	padding: 15px 0;
-	background-color: #fefefe;
-	font-size: 16px;
-	font-weight: 600;
+header {
+  padding: 10px 0;
+  background-color: #fefefe;
+}
+.logo {
+  width: 33.9%;
 }
 h4{
 	margin-top: 25%;

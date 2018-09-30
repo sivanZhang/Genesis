@@ -1,30 +1,23 @@
 <template>
 	<div class="container text-center">
-		<header class="row">
+	<!-- 	<header class="row">
 			<div class="text-center">
 				<img class="logo" src="../assets/logo.png" alt="">
 			</div>
-		</header>
-<div class="iframe-warp row">
-	<iframe id="show-iframe" frameborder=0 scrolling='auto' src="http://www.demo-it.com.au/genesisstrata/admin"></iframe>
-</div>
-
-<loading v-if="loading"></loading> 
-			
+		</header> -->
+    <div class="iframe-warp row">
+      <iframe id="show-iframe" frameborder="0" scrolling="auto" :src="$store.state.url" allowfullscreen></iframe>
+    </div>
+    <loading v-if="loading"></loading>
 	</div>
 </template>
 
 <script>
-/* import footerMenu from './menu'; */
 export default {
-  name: "profile" /* 
-	components: {
-    footerMenu
-  }, */,
+  name: "Iframe",
   data() {
     return {
-
-	  loading: true
+      loading: true
     };
   },
   mounted() {
@@ -34,19 +27,15 @@ export default {
     oIframe.style.width = deviceWidth + "px";
     oIframe.style.height = deviceHeight + "px";
     oIframe.onload = () => {
-	  this.loading = false;
+      this.loading = false;
+      console.log(oIframe);
+      console.log(oIframe.contentWindow.document.getElementById('index-form'))
     };
   }
 };
 </script>
 
 <style scoped>
-.iframe-wrap {
-  -webkit-overflow-scrolling: touch;
-  overflow-y: scroll;
-  z-index: 99;
-  padding-bottom: 46px;
-}
 header {
   padding: 10px 0;
   background-color: #fefefe;
@@ -54,9 +43,11 @@ header {
 .logo {
   width: 33.9%;
 }
-h4 {
-  margin-top: 25%;
-  color: gray;
+.iframe-warp {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  z-index: 99;
+  padding-bottom: 46px;
 }
 .container {
   background: #fff;

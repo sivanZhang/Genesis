@@ -10,7 +10,7 @@
 		</div>
 		<div class="sub-menu text-center row">
 			<div>
-				<a href="http://www.demo-it.com.au/genesisstrata/category/notice/" @click="showIframe()" target="showHere"><!--  @click.prevent="getAppBrowser('http://www.demo-it.com.au/genesisstrata/category/notice/')" -->
+				<a  @click.prevent="getHtml(`http://www.demo-it.com.au/genesisstrata/category/notice/`)">
 					<div class="icon-wrap">
 						<img src="../assets/icons/2.png" alt="">
 					</div>
@@ -18,7 +18,7 @@
 				</a>
 			</div>
 			<div>
-				<a href="http://www.demo-it.com.au/genesisstrata/paylevy/" @click="showIframe()" target="showHere"><!-- @click.prevent="getAppBrowser('http://www.demo-it.com.au/genesisstrata/paylevy/')" -->
+				<a @click.prevent="getHtml(`http://www.demo-it.com.au/genesisstrata/paylevy/`)">
 					<div class="icon-wrap">
 					<img src="../assets/icons/3.png" alt="">
 					</div>
@@ -26,8 +26,7 @@
 				</a>
 			</div>
 			<div>
-				<!-- <a @click.prevent="getAppBrowser('http://www.demo-it.com.au/genesisstrata/repair-request/')"> -->
-        <a href="http://www.demo-it.com.au/genesisstrata/repair-request/" @click="showIframe()" target="showHere">
+        <a @click.prevent="getHtml(`http://www.demo-it.com.au/genesisstrata/repair-request/`)">
 					<div class="icon-wrap">
 					<img src="../assets/icons/4.png" alt="">
 					</div>
@@ -35,65 +34,42 @@
 				</a>
 			</div>
 			<div>
-				<!-- <a @click.prevent="getAppBrowser('http://www.demo-it.com.au/genesisstrata/visitor-parking/')"> -->
-        <a href="http://www.demo-it.com.au/genesisstrata/visitor-parking/" @click="showIframe()" target="showHere">
+        <a @click.prevent="getHtml(`http://www.demo-it.com.au/genesisstrata/visitor-parking/`)">
 					<div class="icon-wrap">
 					<img src="../assets/icons/5.png" alt="">
 					</div>
 					<div>Visitor Parking</div>
 				</a>
 			</div>
-		</div><!--  -->
-    <h4>Notice</h4>
-    <p>Aebitis beatae tempore iure laboriosam accusamus consequatur reiciendis totam ab optio nulla odio modi corporis sit veniam facere! Expedita of the sequi nostrum officiis cupiditate asperiores suscipit ea! Voluptatibus reiciendis obcaecati, inventore corporis, qui recusandae aliquam consequuntur necessitatibus fugiat distinctio, nulla numquam ut. Vitae tempora vero temporibus optio velit illo placeat aut est quisquam, nemo commodi officiis iste sint, vel voluptas quaerat? Sed eius iste, reprehenderit mollitia saepe, veniam aliquam molestias, incidunt magni repudiandae enim.
-
-A laborum quis, inventore ea totam, ipsam sapiente id aliquid labore sit maxime sed eveniet nesciunt corporis distinctio earum atque ipsa officia facilis. Eius quos, maiores culpa atque voluptate quae quam laudantium sed veniam impedit neque tempora ipsam. Itaque deserunt minus, repellendus aspernatur laboriosam voluptas totam animi dolorum tempore facere. Repudiandae velit debitis natus doloremque, dolore sed cum assumenda animi a ab totam porro ducimus fuga, ex id non quis nesciunt eos eligendi accusantium voluptatum est sapiente molestiae voluptates.
-
-Quis iure soluta esse officia, fugit natus, beatae. Inventore unde maiores, rem repellat porro rerum, eaque nostrum, quasi deserunt reprehenderit totam mollitia fuga? Mollitia, porro sint sed, placeat nostrum molestiae incidunt aut sunt officiis laudantium minima numquam doloremque in eaque eum explicabo maxime dicta nulla. Asperiores eius voluptatibus autem quis quo consectetur facilis velit maxime vero dicta delectus commodi culpa optio, doloremque dolor officiis nam, eos sunt impedit molestias temporibus iste quae. Praesentium, ducimus facere illo veniam nemo quo suscipit quidem, veritatis nesciunt tempora porro nam voluptatem corrupti!
-
-Impedit temporibus cupiditate repudiandae rerum nemo magni excepturi, facere nisi, id vero ipsam praesentium beatae esse natus quam, doloremque provident! Sit, similique earum, neque consequuntur eaque nostrum! Cum molestias qui itaque perspiciatis ullam laudantium ipsum. Eveniet eum saepe officia. Fugit quasi sit sint architecto, dolorum, harum est facilis cumque debitis aperiam veniam qui deleniti possimus distinctio quos sapiente minima officiis assumenda ratione maxime. Quasi beatae id inventore molestias harum necessitatibus. Magnam atque dolore minima harum, suscipit quis laudantium delectus, mollitia veritatis alias aperiam.</p>
-		<footer-menu></footer-menu>
-		<div v-show="iframeState" id="show_iframe" class="row iframe-wrap">
-			<div class="iframe-header text-center"><img @click="closeIframe()" src="../assets/icons/close.svg" alt="">{{title}}</div>
-			<iframe id="tag_iframe" frameborder=0 name="showHere" scrolling=auto src="">
-		</iframe>
 		</div>
+    	<h4>Notice</h4>
+      <p>Aebitis beatae tempore iure laboriosam accusamus consequatur reiciendis totam ab optio nulla odio modi corporis sit veniam facere! Expedita of the sequi nostrum officiis cupiditate asperiores suscipit ea! Voluptatibus reiciendis obcaecati, inventore corporis, qui recusandae aliquam consequuntur necessitatibus fugiat distinctio, nulla numquam ut. Vitae tempora vero temporibus optio velit illo placeat aut est quisquam, nemo commodi officiis iste sint, vel voluptas quaerat? Sed eius iste, reprehenderit mollitia saepe, veniam aliquam molestias, incidunt magni repudiandae enim.
+
+      A laborum quis, inventore ea totam, ipsam sapiente id aliquid labore sit maxime sed eveniet nesciunt corporis distinctio earum atque ipsa officia facilis. Eius quos, maiores culpa atque voluptate quae quam laudantium sed veniam impedit neque tempora ipsam. Itaque deserunt minus, repellendus aspernatur laboriosam voluptas totam animi dolorum tempore facere. Repudiandae velit debitis natus doloremque, dolore sed cum assumenda animi a ab totam porro ducimus fuga, ex id non quis nesciunt eos eligendi accusantium voluptatum est sapiente molestiae voluptates.
+
+      Quis iure soluta esse officia, fugit natus, beatae. Inventore unde maiores, rem repellat porro rerum, eaque nostrum, quasi deserunt reprehenderit totam mollitia fuga? Mollitia, porro sint sed, placeat nostrum molestiae incidunt aut sunt officiis laudantium minima numquam doloremque in eaque eum explicabo maxime dicta nulla. Asperiores eius voluptatibus autem quis quo consectetur facilis velit maxime vero dicta delectus commodi culpa optio, doloremque dolor officiis nam, eos sunt impedit molestias temporibus iste quae. Praesentium, ducimus facere illo veniam nemo quo suscipit quidem, veritatis nesciunt tempora porro nam voluptatem corrupti!
+
+      Impedit temporibus cupiditate repudiandae rerum nemo magni excepturi, facere nisi, id vero ipsam praesentium beatae esse natus quam, doloremque provident! Sit, similique earum, neque consequuntur eaque nostrum! Cum molestias qui itaque perspiciatis ullam laudantium ipsum. Eveniet eum saepe officia. Fugit quasi sit sint architecto, dolorum, harum est facilis cumque debitis aperiam veniam qui deleniti possimus distinctio quos sapiente minima officiis assumenda ratione maxime. Quasi beatae id inventore molestias harum necessitatibus. Magnam atque dolore minima harum, suscipit quis laudantium delectus, mollitia veritatis alias aperiam.
+      </p>
 	</div>
 </template>
 
 <script>
-import footerMenu from "./menu";
 export default {
-  components: {
-    footerMenu
-  },
   data() {
     return {
-      iframeState: false,
       title: "Genesis"
     };
   },
   methods: {
-    closeIframe() {
-      this.iframeState = false;
-    },
-    showIframe() {
-      this.iframeState = true;
-    },
-    getAppBrowser(url) {
-      var options = 'location=no';
-      if (typeof a != "undefined") {
-        cordova.InAppBrowser.open(url, "_blank",options);
-      } else {
-        window.open(url, "_top");
-      }
+    getHtml(val) {
+      this.$store.commit("setUrl",val);
+      this.$router.push('/iframe');
     }
   },
   mounted() {
-    const deviceHeight = document.documentElement.clientHeight;
-    show_iframe.style.height = deviceHeight + "px";
     let width = $(".main").width();
-    $(".main").css("height", width * 0.56 + "px");
+	$(".main").css("height", width * 0.56 + "px");
   }
 };
 </script>
@@ -105,35 +81,13 @@ p {
   white-space: pre-wrap;
   text-align: justify;
   text-justify: inter-ideograph;
+  padding-bottom: 60px;
 }
 h4 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-.iframe-wrap {
-  position: fixed;
-  top: 0;
-  z-index:98;
-  width: 100%;
-  padding-bottom:50px; 
-}
-.iframe-header {
-  height: 40px;
-  background-color: #f4f4f4;
-  border-bottom: 1px solid #ddd;
-  line-height: 40px;
-}
-.iframe-header img {
-  width: 20px;
-  margin: 10px 15px;
-  position: absolute;
-  left: 0;
-}
-iframe {
-  width: 100%;
-  height: 100%;
 }
 .sub-menu > div {
   width: 25%;
@@ -154,7 +108,7 @@ iframe {
 }
 header {
   padding: 10px 0;
-  background-color: #fefefe;;
+  background-color: #fefefe;
 }
 .main img {
   width: 100%;
