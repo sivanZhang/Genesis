@@ -37,6 +37,9 @@ export default {
 header {
   padding: 10px 0;
   background-color: #fefefe;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .logo {
   width: 33.9%;
@@ -46,6 +49,7 @@ header {
   overflow-y: scroll;
   z-index: 99;
   padding-bottom: 46px;
+  margin-top: 47.7px;
 }
 .container {
   background: #fff;

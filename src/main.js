@@ -4,7 +4,6 @@ import router from './router'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 import $ from 'jquery'
-import 'animate.css'
 import '../static/bootstrap-3.3.7/js/bootstrap.min.js'
 import '../static/bootstrap-3.3.7/css/bootstrap.min.css'
 import '../static/css/base.css'
